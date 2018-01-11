@@ -17,7 +17,7 @@ Microsoft's official response is to use Microsoft provided MFA, which produce an
 Other fun facts about EWS:
 
 * Logging is not 100%. It may log failed attempts in your audit logs, it may not.
-* It helpfully provides user enumeration.  If a user doesn't exist, a different user is returned.
+* It helpfully provides user enumeration.  If a user doesn't exist, a different error is returned.
 
 ## Single user test mode
 
