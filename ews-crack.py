@@ -92,9 +92,9 @@ def multi_account_test(domain, filename):
     with open(filename) as credentials:
         for line in credentials:
             username, password = line.split(":")
-            valid = test_single_mode(domain, username, password)
+            valid = test_single_mode(domain, username, password.rstrip())
             if valid:
-                print("Valid combo found {}:{}".format(username, password))
+                print("Valid combo found {}:{}".format(username, password.rstrip()))
 
 
 def spray_and_pray(domain, filename, password):
