@@ -83,7 +83,7 @@ def test_single_mode(domain, username, password):
     if account is None and config is None:
         return False
 
-    next(iter(account.inbox.all()))
+    iter(account.inbox.all())
     return True
 
 
