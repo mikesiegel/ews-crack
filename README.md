@@ -43,7 +43,7 @@ sudo apt-get install libkrb5-dev
 Then install the requirements:
 
 ```
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 ## Single user test mode
