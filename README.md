@@ -19,6 +19,33 @@ Other fun facts about EWS:
 * Logging is not 100%. It may log failed attempts in your audit logs, it may not.
 * It helpfully provides user enumeration.  If a user doesn't exist, a different error is returned.
 
+## Update as of July 2018
+
+[Microsoft now supports conditional access with legacy auth flows](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-conditions#legacy-authentication)
+
+Turn on Modern Authentication:
+```
+Set-OrganizationConfig -OAuth2ClientProfileEnabled $true
+```
+
+This will break legacy clients, but it's a must.  Make sure you watch out for POP3, ActiveSync, other methods of brute forcing your O365 environment.
+
+## Installation
+
+You'll need the python and kerberos development libraries:
+
+For example, in a Debian-based distro
+```
+sudo apt-get install python-dev
+sudo apt-get install libkrb5-dev
+```
+
+Then install the requirements:
+
+```
+pip install -r requirements
+```
+
 ## Single user test mode
 
 `ews-crack.py --mode single --username jsmith --domain contoso.com --password mypassword`
